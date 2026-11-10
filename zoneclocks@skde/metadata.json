@@ -1,0 +1,10 @@
+{
+  "uuid": "zoneclocks@skde",
+  "name": "Zone Clocks",
+  "description": "Several clocks for different time zones side by side in the panel. Add, edit, remove and color each clock.",
+  "icon": "preferences-system-time",
+  "max-instances": -1,
+  "version": "1.0.0",
+  "author": "skde",
+  "cinnamon-version": ["5.0", "5.2", "5.4", "5.6", "5.8", "6.0", "6.2", "6.4"]
+}

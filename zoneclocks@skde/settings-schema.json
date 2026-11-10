@@ -1,0 +1,110 @@
+{
+  "layout": {
+    "type": "layout",
+    "pages": ["clocks-page", "display-page"],
+    "clocks-page": {
+      "type": "page",
+      "title": "Clocks",
+      "sections": ["clocks-section", "help-section"]
+    },
+    "display-page": {
+      "type": "page",
+      "title": "Display",
+      "sections": ["format-section", "appearance-section"]
+    },
+    "clocks-section": {
+      "type": "section",
+      "title": "Clocks",
+      "keys": ["clocks"]
+    },
+    "help-section": {
+      "type": "section",
+      "title": "Tips",
+      "keys": ["help-label"]
+    },
+    "format-section": {
+      "type": "section",
+      "title": "Time format",
+      "keys": ["time-format", "show-seconds", "show-day-offset", "custom-format"]
+    },
+    "appearance-section": {
+      "type": "section",
+      "title": "Appearance",
+      "keys": ["show-names", "color-mode", "spacing"]
+    }
+  },
+
+  "clocks": {
+    "type": "list",
+    "description": "Clocks shown in the panel, in order (use the arrows to reorder)",
+    "columns": [
+      {"id": "enabled",  "title": "Show",                       "type": "boolean", "default": true},
+      {"id": "name",     "title": "Name",                       "type": "string",  "default": ""},
+      {"id": "timezone", "title": "Time zone (city, IANA name or UTC offset)", "type": "string", "default": "UTC"},
+      {"id": "color",    "title": "Color (name or #hex)", "type": "string", "default": ""}
+    ],
+    "default": [
+      {"enabled": true, "name": "UTC",      "timezone": "UTC",              "color": "#9e9e9e"},
+      {"enabled": true, "name": "London",   "timezone": "Europe/London",    "color": "#4fc3f7"},
+      {"enabled": true, "name": "New York", "timezone": "America/New_York", "color": "#ffb74d"},
+      {"enabled": true, "name": "Tokyo",    "timezone": "Asia/Tokyo",       "color": "#ef5350"}
+    ]
+  },
+
+  "help-label": {
+    "type": "label",
+    "description": "Time zone accepts an IANA name such as Europe/London, a city such as \"new york\" or \"Berlin\", or an offset such as UTC+3 or -05:30.\n\nColor accepts a CSS color name such as orange or a hex value such as #ff8800. Leave it empty to use the panel's text color.\n\nIf the name is left empty, the city from the time zone is used."
+  },
+
+  "time-format": {
+    "type": "combobox",
+    "default": "system",
+    "description": "Hour format",
+    "options": {
+      "Follow system setting": "system",
+      "24-hour": "24h",
+      "12-hour": "12h"
+    }
+  },
+  "show-seconds": {
+    "type": "switch",
+    "default": false,
+    "description": "Show seconds"
+  },
+  "show-day-offset": {
+    "type": "switch",
+    "default": true,
+    "description": "Mark clocks that are on another day (+1d / -1d)"
+  },
+  "custom-format": {
+    "type": "entry",
+    "default": "",
+    "description": "Custom time format (strftime syntax, overrides the options above)",
+    "tooltip": "Example: %H:%M  or  %a %H:%M. Leave empty to use the options above."
+  },
+
+  "show-names": {
+    "type": "switch",
+    "default": true,
+    "description": "Show clock names in the panel"
+  },
+  "color-mode": {
+    "type": "combobox",
+    "default": "all",
+    "description": "Apply the clock color to",
+    "options": {
+      "Name and time": "all",
+      "Name only": "name",
+      "A colored dot before the clock": "dot"
+    }
+  },
+  "spacing": {
+    "type": "spinbutton",
+    "default": 10,
+    "min": 0,
+    "max": 40,
+    "step": 1,
+    "units": "px",
+    "description": "Space between clocks"
+  }
+}

@@ -1,0 +1,35 @@
+/* Zone Clocks applet */
+
+.zoneclocks-item {
+    padding: 0 2px;
+}
+
+.zoneclocks-dot {
+    padding-right: 4px;
+}
+
+.zoneclocks-name {
+    font-weight: bold;
+    padding-right: 4px;
+}
+
+.zoneclocks-placeholder {
+    font-style: italic;
+}
+
+.zoneclocks-menu-left {
+    padding-right: 24px;
+}
+
+.zoneclocks-menu-name {
+    font-weight: bold;
+}
+
+.zoneclocks-menu-zone,
+.zoneclocks-menu-detail {
+    font-size: 0.85em;
+}
+
+.zoneclocks-menu-time {
+    font-weight: bold;
+}
